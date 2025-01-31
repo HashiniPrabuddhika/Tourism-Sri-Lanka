@@ -32,7 +32,7 @@ const packageSchema = new Schema({
     accommodation: String,
     mealPlan: String,
     travelTime: String,
-    transferMode: String, 
+    transferMode: String,
 });
-
-module.exports = mongoose.model("Package", packageSchema);
+const Tourpackage = mongoose.model("Package", packageSchema);
+module.exports = Tourpackage

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Tourpackage = require('../models/Tourpackage.js');
+const Tourpackage = require('../models/Tourpackage');
+console.log(Tourpackage);
 const upload = require('../multer/upload');
 
 router.get('/packages', async (req, res) => {
@@ -14,22 +15,22 @@ router.get('/packages', async (req, res) => {
 
 router.get("/packages/:id", async (req, res) => {
     try {
-      const packageId = req.params.id;
-      const tourPackage = await Tourpackage.findById(packageId);
-      if (!tourPackage) {
-        return res.status(404).send({ message: "Package not found" });
-      }
-      res.json(tourPackage);
+        const packageId = req.params.id;
+        const tourPackage = await Tourpackage.findById(packageId);
+        if (!tourPackage) {
+            return res.status(404).send({ message: "Package not found" });
+        }
+        res.json(tourPackage);
     } catch (err) {
-      console.error(err);
-      res.status(500).send({ message: "Server error" });
+        console.error(err);
+        res.status(500).send({ message: "Server error" });
     }
-  });
+});
 
 
 router.post('/packages', upload.single('photo'), async (req, res) => {
     try {
-        const { name, destination, days, passengers, price, imageUrl,description,activities,accommodation,mealPlan,travelTime,transferMode } = req.body;
+        const { name, destination, days, passengers, price, imageUrl, description, activities, accommodation, mealPlan, travelTime, transferMode } = req.body;
 
         const photoPath = req.file ? req.file.path : imageUrl;
 
@@ -42,8 +43,8 @@ router.post('/packages', upload.single('photo'), async (req, res) => {
             days,
             passengers,
             price,
-            imageUrl: photoPath, 
-            description,activities,accommodation,mealPlan,travelTime,transferMode
+            imageUrl: photoPath,
+            description, activities, accommodation, mealPlan, travelTime, transferMode
         });
 
         await newPackage.save();
