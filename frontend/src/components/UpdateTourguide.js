@@ -1,9 +1,7 @@
 import React,{useEffect, useState} from "react"
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
-
-
-//Update data from database
+import { API_URL } from "../utils/apiConfig";
 
 export default function UpdateTourguide(){
 
@@ -20,17 +18,15 @@ export default function UpdateTourguide(){
 
   const { id } = useParams();
 
-  //get data from database
   useEffect(() => {
       getTourguides();
     }, []);
   
-    //let navigate= useNavigate();
   
     function getTourguides() {
       let tourguide = true;
   
-      fetch(`http://localhost:8070/tourguide/get/${id}`)
+      fetch(`${API_URL}/tourguide/get/${id}`)
         .then((res) => res.json())
   
         .then((result) => {
@@ -58,8 +54,6 @@ export default function UpdateTourguide(){
 
       e.preventDefault();
 
-      //alert("Insert");
-
       const updateTourguide ={
         fullName,
         age,
@@ -74,7 +68,7 @@ export default function UpdateTourguide(){
       }
 
       axios
-    .patch(`http://localhost:8070/tourguide/update/${id}`, updateTourguide)
+    .patch(`${API_URL}/tourguide/update/${id}`, updateTourguide)
     .then((_res) => {
       alert("Tourguide Updated Successfully!");
      // navigate("/front");

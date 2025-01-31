@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-
-//import css file from style sheets directory
+import { API_URL } from "../utils/apiConfig";
 import styles from "../style_sheets/Login.module.css"
 
 const Signup = () => {
@@ -16,9 +15,7 @@ const Signup = () => {
 
     const addUser = (e) => {
         e.preventDefault();
-
-        //TODO validate whether username is taken or not
-        //Try to use retrieve code and get the username from data.user_name and compare it with the user entered username
+        
         if(reEnteredpassword === password){
             const newUser = {
                 user_name,
@@ -27,7 +24,7 @@ const Signup = () => {
                 password
             }
     
-            axios.post("http://localhost:8070/user/new", newUser)
+            axios.post(`${API_URL}/user/new`, newUser)
                 .then(() => {
                     alert("Registration Successful!");
                     history.push("/user/login");

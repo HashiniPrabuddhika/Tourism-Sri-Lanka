@@ -3,7 +3,7 @@ import React,{useState} from "react";
 import axios from "axios";
 import pic2 from '../img/Tboy.jpg'
 import myStyle from "../style_sheets/Style.module.css";
-
+import { API_URL } from "../utils/apiConfig";
 
 
  
@@ -38,7 +38,7 @@ function CusPackage(){
     notes
 
    }
-   axios.post("http://localhost:8070/cusPack/add",newPackage).then(()=>{
+   axios.post(`${API_URL}/cusPack/add`,newPackage).then(()=>{
 
      alert("Your Package Created!")
    }).catch((err)=>{

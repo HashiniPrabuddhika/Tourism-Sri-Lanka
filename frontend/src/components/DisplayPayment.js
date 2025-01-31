@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import { API_URL } from "../utils/apiConfig";
 //import css file from style sheets directory
 import styleDisplayPayments from "../style_sheets/Payment.module.css";
 
@@ -21,7 +21,7 @@ const DisplayPayment = (props) => {
 
   const retrieveData = () => {
     axios
-      .get(`http://localhost:8070/payment/get/${props.userId}`)
+      .get(`${API_URL}/payment/get/${props.userId}`)
       .then((response) => {
         setData(response.data.payment);
       })
@@ -32,7 +32,7 @@ const DisplayPayment = (props) => {
 
   const deleteEntry = () => {
     axios
-      .delete(`http://localhost:8070/payment/delete/${props.userId}`)
+      .delete(`${API_URL}/payment/delete/${props.userId}`)
       .then(() => {
         console.log("Deleted");
         retrieveData();

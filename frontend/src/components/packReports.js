@@ -3,7 +3,7 @@ import axios from "axios";
 import {Link} from 'react-router-dom';
 import galle from '../images/Travelo.jpeg'
 import "./../Style.css";
-//import Package from "../../../TourPackage/BACKEND/models/Package";
+import { API_URL } from "../utils/apiConfig";
 
 
 
@@ -26,7 +26,7 @@ export default class packRepo extends Component{
   }
   retrivePackages(){
 
-   axios.get("http://localhost:8070/package/all").then(res=>{
+   axios.get( `${API_URL}/package/all` ).then(res=>{
 
       if(res.data.success){
           this.setState({

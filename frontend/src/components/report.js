@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import { API_URL } from "../utils/apiConfig";
 import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
  import styles from "../style_sheets/All.module.css";
@@ -42,7 +42,7 @@ export default class report extends Component {
    }
    retriveHotels() {
 
-      axios.get("http://localhost:8070/hotel/all").then(res => {
+      axios.get(`${API_URL}/hotel/all`).then(res => {
 
          if (res.data.success) {
             this.setState({
@@ -68,7 +68,7 @@ export default class report extends Component {
 
    onDelete(id) {
 
-      fetch(`http://localhost:8070/hotel/delete/${id}`, {
+      fetch(`${API_URL}/hotel/delete/${id}`, {
 
          method: `DELETE`
 

@@ -3,8 +3,7 @@ import axios from "axios";
 import Train from '../img/my23.jpg'
 import '../App.css';
 import myStyle from "../style_sheets/Style.module.css";
-//import Package from ".../src/Package";
-//import Package from "../../../TourPackage/BACKEND/models/Package";
+import { API_URL } from "../utils/apiConfig";
 
 
 
@@ -27,7 +26,7 @@ export default class cusPack extends Component{
   }
   retrivePackages(){
 
-   axios.get("http://localhost:8070/package/all").then(res=>{
+   axios.get(`${API_URL}/package/all`).then(res=>{
 
       if(res.data.success){
           this.setState({
@@ -60,7 +59,7 @@ export default class cusPack extends Component{
   handleTextSearch=(e)=>{
 
      const searchTerm=e.currentTarget.value;
-     axios.get("http://localhost:8070/package/all").then(res=>{
+     axios.get(`${API_URL}/package/all`).then(res=>{
 
       if(res.data.success){
          this.filterContent(res.data.existingPackages,searchTerm)

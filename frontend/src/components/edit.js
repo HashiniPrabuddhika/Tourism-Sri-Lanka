@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "../style_sheets/frontPage.css";
 import Footer from "./Footer";
-
+import { API_URL } from "../utils/apiConfig";
 class Sith extends Component {
   state = {
     packages: [],
@@ -11,7 +11,7 @@ class Sith extends Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8070/tourpackages/packages")
+    axios.get(`${API_URL}/tourpackages/packages`)
       .then((response) => {
         this.setState({ packages: response.data });
       })

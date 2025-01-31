@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-//import css file from style sheets directory
+import { API_URL } from "../utils/apiConfig";
 import styles from "../style_sheets/Login.module.css"
 
 const Login = (props) => {
@@ -23,7 +22,7 @@ const Login = (props) => {
     const findUser = (e) => {
         e.preventDefault();
     
-        axios.get(`http://localhost:8070/user/get/${userEnteredInfo.user_name}`)
+        axios.get(`${API_URL}/user/get/${userEnteredInfo.user_name}`)
             .then((response) => {
                 setData(response.data.user);
             })

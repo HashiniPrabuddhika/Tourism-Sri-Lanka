@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { API_URL } from "../utils/apiConfig";
 //import css file from style sheets directory
 import stylesAddPayments from "../style_sheets/Payment.module.css";
 
@@ -38,7 +38,7 @@ const AddPayment = (props) => {
     };
 
     axios
-      .post("http://localhost:8070/payment/add", newCard)
+      .post(`${API_URL}/payment/add`, newCard)
       .then(() => {
         console.log("Added");
         props.history.push(`/view/payment+details/${props.userId}`)

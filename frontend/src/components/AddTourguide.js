@@ -1,9 +1,6 @@
-
 import React,{useState} from "react";
-//import React,{Component} from "react"
 import axios from "axios";
-//import axios from "axios";
-
+import { API_URL } from "../utils/apiConfig";
 
 
 function AddTourguide(){
@@ -41,7 +38,7 @@ function AddTourguide(){
 
    }
    //add data to database
-   axios.post("http://localhost:8070/tourguide/add",newTourguide).then(()=>{
+   axios.post(`${API_URL}/tourguide/add`,newTourguide).then(()=>{
 
      alert("Tourguide Added")
    }).catch((err)=>{

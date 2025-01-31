@@ -2,8 +2,8 @@ import React,{Component} from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 import galle from '../img/Travelo.jpeg'
-import myStyle from "../style_sheets/Style.module.css";
-//import Package from "../../../TourPackage/BACKEND/models/Package";
+import myStyle from "../style_sheets/Style.module.css"; 
+import { API_URL } from "../utils/apiConfig";
 
 
 
@@ -26,7 +26,7 @@ export default class AllPacks extends Component{
   }
   retrivePackages(){
 
-   axios.get("http://localhost:8070/package/all").then(res=>{
+   axios.get(`${API_URL}/package/all`).then(res=>{
 
       if(res.data.success){
           this.setState({
@@ -52,7 +52,7 @@ export default class AllPacks extends Component{
      
   onDelete(id){
 
-     fetch(`http://localhost:8070/package/delete/${id}`,{
+     fetch(`${API_URL}/package/delete/${id}`,{
 
            method:`DELETE`
 
@@ -90,7 +90,7 @@ export default class AllPacks extends Component{
 handleTextSearch=(e)=>{
 
    const searchTerm=e.currentTarget.value;
-   axios.get("http://localhost:8070/package/all").then(res=>{
+   axios.get(`${API_URL}/package/all`).then(res=>{
 
     if(res.data.success){
        this.filterContent(res.data.existingPackages,searchTerm)

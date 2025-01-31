@@ -6,7 +6,7 @@ import styles from "../style_sheets/Add.module.css";
  import{ BiMenu,  BiLogOut} from "react-icons/bi"
  import{ BsFillGridFill} from "react-icons/bs"
  import{FaHotel} from "react-icons/fa"
-
+ import { API_URL } from "../utils/apiConfig";
  
  import{RiAdminFill} from "react-icons/ri"
  
@@ -43,7 +43,7 @@ no_of_rooms
 
     }
  
-    axios.post("http://localhost:8070/hotel/add", newHotel).then(() => {
+    axios.post(`${API_URL}/hotel/add`, newHotel).then(() => {
       alert("resturant added")
 
     } ).catch((err) =>{

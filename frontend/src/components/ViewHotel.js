@@ -5,17 +5,7 @@ import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
  import styles from "../style_sheets/View.module.css";
  import Footer from "./Footer";
- import addImg from "../img/addImg.svg"
- import{ BiMenu} from "react-icons/bi"
- import{ BsFillGridFill} from "react-icons/bs"
- import{FaHotel} from "react-icons/fa"
- import{RiAdminFill} from "react-icons/ri"
- import{MdFamilyRestroom} from "react-icons/md"
- import{GiCarKey} from "react-icons/gi"
- import{FaBuilding} from "react-icons/fa"
- import{GrUpdate} from "react-icons/gr"
- import{ImPrinter} from "react-icons/im"
- import{FaExternalLinkAlt} from "react-icons/fa"
+ import { API_URL } from "../utils/apiConfig";
  import add from "../img/add.jpg"
  import photo1 from "../img/hl1.jpg"
  import photo2 from "../img/hl2.jpeg"
@@ -53,7 +43,7 @@ export default class ViewHotel extends Component {
    }
    retriveHotels() {
 
-      axios.get("http://localhost:8070/hotel/all").then(res => {
+      axios.get(`${API_URL}/hotel/all`).then(res => {
 
          if (res.data.success) {
             this.setState({
@@ -76,7 +66,7 @@ export default class ViewHotel extends Component {
     handleTextSearch=(e)=>{
    
        const searchTerm=e.currentTarget.value;
-       axios.get("http://localhost:8070/hotel/all").then(res=>{
+       axios.get(`${API_URL}/hotel/all`).then(res=>{
    
         if(res.data.success){
            this.filterContent(res.data.existingHotels,searchTerm)

@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-//import css file from style sheets directory
+import { API_URL } from "../utils/apiConfig";
 import styles from "../style_sheets/Profile.module.css";
 
 //import images from img directory
@@ -17,7 +16,7 @@ const Profile = (props) => {
     }, []);
 
     const retrieveUser = () => {
-        axios.get(`http://localhost:8070/user/${props.userId}`)
+        axios.get(`${API_URL}/user/${props.userId}`)
             .then((res) => {
                 setUser(res.data.user);
             })

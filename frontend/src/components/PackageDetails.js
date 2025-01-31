@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "../style_sheets/frontPage.css";
 import axios from "axios";
 import Footer from "./Footer";
+import { API_URL } from "../utils/apiConfig";
 
 const PackageDetails = () => {
     const { id } = useParams();
@@ -10,7 +11,7 @@ const PackageDetails = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8070/tourpackages/packages/${id}`)
+            .get(`${API_URL}/tourpackages/packages/${id}`)
             .then((response) => {
                 setPackageDetails(response.data);
             })

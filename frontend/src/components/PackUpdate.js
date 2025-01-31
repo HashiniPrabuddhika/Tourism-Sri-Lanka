@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import myStyle from "../style_sheets/Style.module.css";
 import galle from '../img/Travelo.jpeg'
-
+import { API_URL } from "../utils/apiConfig";
 
 
 export default function EditPack(){
@@ -29,7 +29,7 @@ export default function EditPack(){
     function getPackages() {
       let Package = true;
   
-      fetch(`http://localhost:8070/package/get/${id}`)
+      fetch(`${API_URL}/package/get/${id}`)
         .then((res) => res.json())
   
         .then((result) => {
@@ -71,7 +71,7 @@ export default function EditPack(){
       }
 
       axios
-    .patch(`http://localhost:8070/package/update/${id}`, updatePackage)
+    .patch(`${API_URL}/package/update/${id}`, updatePackage)
     .then((_res) => {
       alert("Package successfully updated");
      // navigate("/front");

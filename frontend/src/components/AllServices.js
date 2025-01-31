@@ -3,7 +3,7 @@ import styleHome from "../style_sheets/Home.module.css";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from "./Footer";
-//import images from img directory
+import { API_URL } from "../utils/apiConfig";
 
 import Allservices from "../img/allServices.jpg"
 
@@ -16,7 +16,7 @@ const AllServices = () => {
         const fetchServices = async () => {
             try {
                 const title = "Adventure"; 
-                const response = await axios.get(`http://localhost:8070/ourallServices?title=${title}`);
+                const response = await axios.get(`${API_URL}/ourallServices?title=${title}`);
                 setServices(response.data);
             } catch (error) {
                 console.error('Error fetching services:', error);
@@ -29,7 +29,7 @@ const AllServices = () => {
         const fetchTrekking = async () => {
             try {
                 const title = "Trekking"; 
-                const response = await axios.get(`http://localhost:8070/ourallServices?title=${title}`);
+                const response = await axios.get(`${API_URL}/ourallServices?title=${title}`);
                 setTrekking(response.data);
             } catch (error) {
                 console.error('Error fetching services:', error);
@@ -42,7 +42,7 @@ const AllServices = () => {
         const fetchCampFire = async () => {
             try {
                 const title = "Camping"; 
-                const response = await axios.get(`http://localhost:8070/ourallServices?title=${title}`);
+                const response = await axios.get(`${API_URL}/ourallServices?title=${title}`);
                 setCampFire(response.data);
             } catch (error) {
                 console.error('Error fetching services:', error);

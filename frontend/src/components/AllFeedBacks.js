@@ -2,10 +2,9 @@ import React,{Component} from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 import galle from '../images/Travelo.jpeg'
-
+import { API_URL } from "../utils/apiConfig";
 import '../App.css';
 
-//import Package from "../../../TourPackage/BACKEND/models/Package";
 
 
 
@@ -28,7 +27,7 @@ export default class cusP extends Component{
   }
   retriveCusPacks(){
 
-   axios.get("http://localhost:8070/cusPack/all4").then(res=>{
+   axios.get(`${API_URL}/cusPack/all4`).then(res=>{
 
       if(res.data.success){
           this.setState({
@@ -54,12 +53,9 @@ export default class cusP extends Component{
   
   onDelete(id){
 
-     fetch(`http://localhost:8070/cusPack/delete/${id}`,{
+     fetch(`${API_URL}/cusPack/delete/${id}`,{
 
            method:`DELETE`
-
-
-
 
      }).then((result)=>{
 
@@ -91,7 +87,7 @@ export default class cusP extends Component{
 handleTextSearch=(e)=>{
 
    const searchTerm=e.currentTarget.value;
-   axios.get("http://localhost:8070/cusPack/all4").then(res=>{
+   axios.get(`${API_URL}/cusPack/all4`).then(res=>{
 
     if(res.data.success){
        this.filterContent(res.data.existingCusPacks,searchTerm)
@@ -167,8 +163,6 @@ render(){
     <td></td>
     
    
-
-
  <div class="card-body"  style={{ position:"absolute", right:10,top:600}}>
  <h5 class="text-dark"><center><strong>Travelo</strong></center></h5>
  <p class="text-white"><center>copyright @2020 Travelo All rights are reserved</center></p>
@@ -178,21 +172,8 @@ render(){
  </div>
 </div>
   
-
- 
-     
-
-   
-
    ) 
 }
 
 }
  
- 
- 
- 
- 
- /*
- <div style={{ position:"relative", right:150,top:200}}><a  class="BtnUpdateSp"  href={`/cuzup/${cusPacks._id}`}>Update</a> <br></br><br></br>
- <a  class="BtnDeleSp" onClick={()=>this.onDelete(cusPacks._id)}>&nbsp;Cancel</a> </div>*/

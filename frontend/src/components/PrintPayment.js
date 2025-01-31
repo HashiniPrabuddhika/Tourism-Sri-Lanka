@@ -3,8 +3,7 @@ import axios from "axios";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-//import css file from style sheets directory
+import { API_URL } from "../utils/apiConfig";
 import styles from "../style_sheets/Payment.module.css";
 
 //Import components from the component directory
@@ -22,7 +21,7 @@ const PrintPayments = (props) => {
     }, [])
 
     const retrieveData = () => {
-        axios.get(`http://localhost:8070/payments/history/all/${props.userId}`)
+        axios.get(`${API_URL}/payments/history/all/${props.userId}`)
             .then((response) => {
                 setData(response.data.paymentHistory);
             })

@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import axios from "axios";
-//import Tourguide from "../../../Tourguide/BACKEND/models/Tourguide";
+import { API_URL } from "../utils/apiConfig";
 
 
 
@@ -26,7 +26,7 @@ export default class AllTourguides extends Component{
   }
   retriveTourguides(){
 
-   axios.get("http://localhost:8070/tourguide/all").then(res=>{
+   axios.get(`${API_URL}/tourguide/all`).then(res=>{
 
       if(res.data.success){
           this.setState({
@@ -52,7 +52,7 @@ export default class AllTourguides extends Component{
      
   onDelete(id){
 
-     fetch(`http://localhost:8070/tourguide/delete/${id}`,{
+     fetch(`${API_URL}/tourguide/delete/${id}`,{
 
            method:`DELETE`
 
@@ -93,7 +93,7 @@ filterContent(tourguides,searchTerm){
  handleTextSearch=(e)=>{
 
     const searchTerm=e.currentTarget.value;
-    axios.get("http://localhost:8070/tourguide/all").then(res=>{
+    axios.get(`${API_URL}/tourguide/all`).then(res=>{
 
      if(res.data.success){
         this.filterContent(res.data.existingTourguides,searchTerm)

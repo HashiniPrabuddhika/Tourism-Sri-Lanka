@@ -3,14 +3,7 @@ import React,{useState} from "react";
 import axios from "axios";
 import myStyle from "../style_sheets/Style.module.css";
 import galle from '../img/Travelo.jpeg'
-import create from '../img/Create package.jpg'
-
-//import axios from "axios";
-//import {setErrors} from "./../components/setErrors";
- 
-
-
-
+import { API_URL } from "../utils/apiConfig";
 
 function AddPackage(){
 
@@ -50,7 +43,7 @@ function AddPackage(){
    
 
 
-   axios.post("http://localhost:8070/package/add",newPackage).then(()=>{
+   axios.post(`${API_URL}/package/add`,newPackage).then(()=>{
 
      alert("Package Added")
    }).catch((err)=>{

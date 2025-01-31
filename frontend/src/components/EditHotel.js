@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from "../style_sheets/Add.module.css";
-import upImg from "../img/upImg.svg"
+import { API_URL } from "../utils/apiConfig";
 
  import addImg from "../img/update2.svg"
  import{ BiMenu,  BiLogOut} from "react-icons/bi"
@@ -46,7 +46,7 @@ export default function EditResturant() {
   function getHotels() {
     let hotel = true;
 
-    fetch(`http://localhost:8070/hotel/get/${id}`)
+    fetch(`${API_URL}/hotel/get/${id}`)
       .then((res) => res.json())
 
 
@@ -86,7 +86,7 @@ export default function EditResturant() {
     }
 
     axios
-      .put(`http://localhost:8070/hotel/update/${id}`, updateHotel)
+      .put(`${API_URL}/hotel/update/${id}`, updateHotel)
       .then(() => {
         alert(" Updated Successfully!");
         // navigate("/front");

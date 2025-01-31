@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
-//import Package from "../../../TourPackage/BACKEND/models/Package";
+import { API_URL } from "../utils/apiConfig";
 
 export default class guidereport extends Component {
 
@@ -23,7 +23,7 @@ export default class guidereport extends Component {
     //retreive data
     retriveTourguides() {
 
-        axios.get("http://localhost:8070/tourguide/all").then(res => {
+        axios.get(`${API_URL}/tourguide/all`).then(res => {
 
             if (res.data.success) {
                 this.setState({

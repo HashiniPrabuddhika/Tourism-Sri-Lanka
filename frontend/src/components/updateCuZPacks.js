@@ -2,7 +2,7 @@ import React,{useEffect, useState} from "react"
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import tour from '../images/Traveller.jpg'
-
+import { API_URL } from "../utils/apiConfig";
 
 
 export default function EditCusPackz(){
@@ -29,7 +29,7 @@ export default function EditCusPackz(){
     function getCusPacks() {
       let cusPack = true;
   
-      fetch(`http://localhost:8070/cusPack/get/${id}`)
+      fetch(`${API_URL}/cusPack/get/${id}`)
         .then((res) => res.json())
   
         .then((result) => {
@@ -72,7 +72,7 @@ export default function EditCusPackz(){
       }
 
       axios
-    .patch(`http://localhost:8070/cusPack/update/${id}`, updateCusPacks)
+    .patch(`${API_URL}/cusPack/update/${id}`, updateCusPacks)
     .then((_res) => {
       alert("Package succesfully updated");
      // navigate("/front");

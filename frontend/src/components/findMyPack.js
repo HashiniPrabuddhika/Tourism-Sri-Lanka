@@ -5,8 +5,7 @@ import tour from '../img/findPhoto.jpg'
 import '../App.css';
 import myStyle from "../style_sheets/Style.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-//import Package from "../../../TourPackage/BACKEND/models/Package";
+import { API_URL } from "../utils/apiConfig";
 
 
 
@@ -29,7 +28,7 @@ export default class findMyPack extends Component{
   }
   retriveCusPacks(){
 
-   axios.get("http://localhost:8070/cusPack/all4").then(res=>{
+   axios.get(`${API_URL}/cusPack/all4`).then(res=>{
 
       if(res.data.success){
           this.setState({
@@ -55,7 +54,7 @@ export default class findMyPack extends Component{
   
   onDelete(id){
 
-     fetch(`http://localhost:8070/cusPack/delete/${id}`,{
+     fetch(`${API_URL}/cusPack/delete/${id}`,{
 
            method:`DELETE`
 
@@ -92,7 +91,7 @@ export default class findMyPack extends Component{
 handleTextSearch=(e)=>{
 
    const searchTerm=e.currentTarget.value;
-   axios.get("http://localhost:8070/cusPack/all4").then(res=>{
+   axios.get(`${API_URL}/cusPack/all4`).then(res=>{
 
     if(res.data.success){
        this.filterContent(res.data.existingCusPacks,searchTerm)

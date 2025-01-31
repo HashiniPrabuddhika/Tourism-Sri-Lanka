@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-//import css file from style sheets directory
+import { API_URL } from "../utils/apiConfig";
 import styles from "../style_sheets/Checkout.module.css"
 
 const Checkout = (props) => {
@@ -15,7 +15,7 @@ const Checkout = (props) => {
 
     const retrieveData = () => {
         axios
-        .get(`http://localhost:8070/payment/get/${props.userId}`)
+        .get(`${API_URL}/payment/get/${props.userId}`)
         .then( (res) => {
             console.log(res.data.payment);
             res.data.payment ? setData(res.data.payment) : setData([]);

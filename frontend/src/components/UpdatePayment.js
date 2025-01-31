@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
-//import css file from style sheets directory
+import { API_URL } from "../utils/apiConfig";
 import stylesUpdatePayments from "../style_sheets/Payment.module.css";
 
 //Import components from the component directory
@@ -25,7 +24,7 @@ const UpdatePayment = (props) => {
 
   const retrieveData = () => {
     axios
-      .get(`http://localhost:8070/payment/get/${props.userId}`)
+      .get(`${API_URL}/payment/get/${props.userId}`)
       .then((response) => {
         console.log(response.data);
         setData(response.data.payment);
@@ -51,7 +50,7 @@ const UpdatePayment = (props) => {
     };
 
     axios
-      .put(`http://localhost:8070/payment/update/${props.userId}`, updatedData)
+      .put(`${API_URL}/payment/update/${props.userId}`, updatedData)
       .then(() => {
         console.log("Updated");
         props.history.push(`/view/payment+details/${props.userId}`);
