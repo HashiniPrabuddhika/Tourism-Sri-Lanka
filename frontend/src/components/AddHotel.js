@@ -26,6 +26,7 @@ export default function AddHotel(){
   const [name, setname] = useState("");
   const [type, settype] = useState("");
   const [location, setlocation] = useState("");
+  const [ description, setdescription] = useState("");
   const [price, setprice] = useState("");
   const [no_of_rooms, setno_of_rooms] = useState("");
 
@@ -36,6 +37,7 @@ export default function AddHotel(){
 name,
 type,
 location,
+description,
 price,
 no_of_rooms
 
@@ -199,10 +201,7 @@ return (
     <input type="text" style={{height: "50px"}}  class="form-control" id="type" placeholder="Enter Hotel Type"
     onChange ={(e) => {
         settype(e.target.value)
-          }}/>
-   
-            
-    
+          }}/>  
     </div>
  
 
@@ -212,6 +211,14 @@ return (
     <input type="text" style={{height: "50px"}} class="form-control" id="location" placeholder="Enter Location"
     onChange ={(e) => {
         setlocation(e.target.value)
+          }}/>
+    </div>
+
+    <div className= {`form-group text-left ${styles.input}`}>
+    
+    <input type="text" style={{height: "50px"}} class="form-control" id="description" placeholder="Enter description"
+    onChange ={(e) => {
+        setdescription(e.target.value)
           }}/>
     </div>
    
@@ -236,8 +243,6 @@ return (
     
     <button type="submit" class={styles.subBtn}>Submit</button>
     
-    
-   
   </form>
   </div>
   

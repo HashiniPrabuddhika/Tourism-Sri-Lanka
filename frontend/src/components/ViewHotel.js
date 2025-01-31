@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
  import styles from "../style_sheets/View.module.css";
-
+ import Footer from "./Footer";
  import addImg from "../img/addImg.svg"
  import{ BiMenu} from "react-icons/bi"
  import{ BsFillGridFill} from "react-icons/bs"
@@ -18,13 +18,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
  import{FaExternalLinkAlt} from "react-icons/fa"
  import add from "../img/add.jpg"
  import photo1 from "../img/hl1.jpg"
- import photo2 from "../img/hl2.jpg"
- import photo3 from "../img/hl3.jpg"
- import photo4 from "../img/hl4.jpg"
- import photo5 from "../img/hl5.jpg"
- import photo6 from "../img/hl6.jpg"
- import photo7 from "../img/hl7.jpg"
- import photo0 from "../img/hl0.jpg"
+ import photo2 from "../img/hl2.jpeg"
+ import photo3 from "../img/hl3.jpeg"
+ import photo4 from "../img/hl4.jpeg"
+ import photo5 from "../img/hl5.jpeg"
+ import photo6 from "../img/hl6.jpeg"
+ import photo7 from "../img/hl7.jpeg"
+ import photo0 from "../img/hl0.jpeg"
  import cphoto1 from "../img/cus.svg"
  import cphoto2 from "../img/hcus.svg"
  import cphoto3 from "../img/htl.svg"
@@ -49,7 +49,6 @@ export default class ViewHotel extends Component {
 
    }
    componentDidMount() {
-
       this.retriveHotels();
    }
    retriveHotels() {
@@ -60,21 +59,16 @@ export default class ViewHotel extends Component {
             this.setState({
 
                hotels: res.data.existingHotels
-
             });
-
             console.log(this.state.hotels)
 
          }
       })
-
    }
 
    filterContent(_hotels,searchTerm){
-
       const results=_hotels.filter((hotels)=>hotels.type.toLowerCase().includes(searchTerm));
-      this.setState({hotels:results});
-   
+      this.setState({hotels:results}); 
    }
    
    
@@ -108,8 +102,6 @@ export default class ViewHotel extends Component {
 
     {/* <!--container---> */}
 	<section  className={styles.container2}>
-	
-
 		<div  className={styles.row_items2}>
 			<div  className={styles.container_box2}>
 				<div className={styles.container_img2}>
@@ -156,7 +148,7 @@ export default class ViewHotel extends Component {
                 onChange={this.handleTextSearch}>                 
 </input>
       <div  className={styles.heading}>
-      <h1>Our <span>Rooms</span></h1>
+      <h1>Hotel <span>Rooms</span></h1>
       </div>
 
       <div className={styles.content}>
@@ -165,9 +157,8 @@ export default class ViewHotel extends Component {
           <div className={styles.box}>
           <div  className={styles.left}>
           <h4>{hotels.name}</h4>
-          <img src={add}  className={styles.add}></img>
-          
-          </div>
+          <img src={hotels.image}  style={{ width: '100%', height: '200px', objectFit: 'cover' }} alt={hotels.name}></img>
+                    </div>
           <div class="right" className={styles.right}>
             <h4> {hotels.type} </h4>
             <div  className={styles.rate}>
@@ -176,7 +167,7 @@ export default class ViewHotel extends Component {
             <i className={styles.logo3}><AiFillStar/></i>
             <i className={styles.logo3}><AiFillStar/></i>
             </div>
-            <p> Excepteur sint occaecat cupidatat non proident.</p>
+            <p>{hotels.description || "Description not available."}</p>
             <p>{hotels.location}</p>
             <h5>{hotels.price} / per Night</h5>
             {/* <button className={styles.flex1}>
@@ -193,25 +184,14 @@ export default class ViewHotel extends Component {
           </>
         ))}
         
-
-     
-
-       
-
-        
       </div>
     </div>
   </section>
 
 
-
-
-
-
-
     {/* <!--gallery section---> */}
 	<div  className={styles.gallery}>
-    <h1>Our <span>gallery</span></h1>
+    <h1>Scenic  Views</h1>
     <div  className={styles.main_gallery}>
         <div  className={styles.inner_gallery}>
                <img src={photo0}  className={styles.hl0}></img>
@@ -250,22 +230,9 @@ export default class ViewHotel extends Component {
         
     </div>
 </div>
-
-			
-
-			
-
-			
-
-			
-
-			
-
+<Footer/>
 		</div>
 	
-
-         
-
       )
    }
 

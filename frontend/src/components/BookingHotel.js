@@ -3,14 +3,14 @@ import axios from "axios";
 import styles from "../style_sheets/Booking.module.css";
 import {Link} from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
-import photo0 from "../img/hl0.jpg"
 import photo1 from "../img/hl1.jpg"
-import photo2 from "../img/hl2.jpg"
-import photo3 from "../img/hl3.jpg"
-import photo4 from "../img/hl4.jpg"
-import photo5 from "../img/hl5.jpg"
-import photo6 from "../img/hl6.jpg"
-import photo7 from "../img/hl7.jpg"
+import photo2 from "../img/hl2.jpeg"
+import photo3 from "../img/hl3.jpeg"
+import photo4 from "../img/hl4.jpeg"
+import photo5 from "../img/hl5.jpeg"
+import photo6 from "../img/hl6.jpeg"
+import photo7 from "../img/hl7.jpeg"
+import photo0 from "../img/hl0.jpeg"
 import logo from "../img/logo.png"
 
 
@@ -115,46 +115,46 @@ return (
 
      
     {/* <!--gallery section---> */}
-	<div  className={styles.gallery}>
-    <h1>Our <span>gallery</span></h1>
-    <div  className={styles.main_gallery}>
-        <div  className={styles.inner_gallery}>
-               <img src={photo0}  className={styles.hl0}></img>
-            
-        </div>
-        <div  className={styles.inner_gallery}>
-               <img src={photo1}  className={styles.hl1}></img>
-            
-        </div>
-        <div  className={styles.inner_gallery}>
-               <img src={photo2}  className={styles.hl2}></img>
-            
-        </div>
-        <div  className={styles.inner_gallery}>
-               <img src={photo3}  className={styles.hl3}></img>
-            
-        </div>
-        <div  className={styles.inner_gallery}>
-               <img src={photo4}  className={styles.hl4}></img>
-            
-        </div>
-
-        <div  className={styles.inner_gallery}>
-               <img src={photo5}  className={styles.hl5}></img>
-            
-        </div>
-
-         <div  className={styles.inner_gallery}>
-               <img src={photo6}  className={styles.hl6}></img>
-            
-        </div>
-        <div  className={styles.inner_gallery}>
-               <img src={photo7}  className={styles.hl7}></img>
-            
-        </div>
-        
-    </div>
-</div>
+	  <div  className={styles.gallery}>
+      <h1>Scenic  Views</h1>
+      <div  className={styles.main_gallery}>
+          <div  className={styles.inner_gallery}>
+                 <img src={photo0}  className={styles.hl0}></img>
+              
+          </div>
+          <div  className={styles.inner_gallery}>
+                 <img src={photo1}  className={styles.hl1}></img>
+              
+          </div>
+          <div  className={styles.inner_gallery}>
+                 <img src={photo2}  className={styles.hl2}></img>
+              
+          </div>
+          <div  className={styles.inner_gallery}>
+                 <img src={photo3}  className={styles.hl3}></img>
+              
+          </div>
+          <div  className={styles.inner_gallery}>
+                 <img src={photo4}  className={styles.hl4}></img>
+              
+          </div>
+  
+          <div  className={styles.inner_gallery}>
+                 <img src={photo5}  className={styles.hl5}></img>
+              
+          </div>
+  
+           <div  className={styles.inner_gallery}>
+                 <img src={photo6}  className={styles.hl6}></img>
+              
+          </div>
+          <div  className={styles.inner_gallery}>
+                 <img src={photo7}  className={styles.hl7}></img>
+              
+          </div>
+          
+      </div>
+  </div>
 </div>
  
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styleHome from "../style_sheets/Home.module.css";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Footer from "./Footer";
 //import images from img directory
 
 import Allservices from "../img/allServices.jpg"
@@ -145,6 +146,7 @@ const AllServices = () => {
             ))}
             </div>
       </div>
+      <Footer/>
       </>
   );
 }

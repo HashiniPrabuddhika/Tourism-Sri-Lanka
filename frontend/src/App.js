@@ -39,7 +39,7 @@ import AllPacks from './components/AllPacks';
 import EditPack from './components/PackUpdate'
 import guidereport from './components/guidereport';
 import AllServices from "./components/AllServices";
-
+import PackageDetails from "./components/PackageDetails"; 
 
 const App = () => {
   const [userId, setUserId] = React.useState(null);
@@ -57,7 +57,7 @@ const App = () => {
       <div className="App min-vh-100" style={{ backgroundColor: "#f7f7f7" }}>
         <nav className={`navbar-fixed-top ${styles.nav}`}>
           <div className={`container ${styles.parentnav}`}>
-            <img src={logo} alt="Travelo logo" className={styles.logo}></img>
+            <img src={logo} alt="logo" className={styles.logo}></img>
             <div className={styles.topnav_center}>
               <ul>
 
@@ -70,9 +70,7 @@ const App = () => {
                   {/* <Link to={`/checkout/${userId}`}>Hotels</Link> */}
                 </li>
 
-                <li>
-                  <Link to={`/add/tourguide`}>Tour Guide</Link>
-                </li>
+              
 
                 <li>
                   <a href="/view/cuspackage">Tour Packages</a>
@@ -102,6 +100,7 @@ const App = () => {
               <Redirect to="/home" />
             </Route>
             <Route path="/allservices" component={AllServices} />
+            <Route path="/packages/:id" component={PackageDetails} />
             <Route
               path="/home"
               component={Home}
@@ -264,6 +263,7 @@ const App = () => {
             />
           </Switch>
         </div>
+        
       </div>
     </Router>
   );

@@ -5,28 +5,19 @@ const router = require('../routes/tourguides');
 
 const tourguideSchema = new mongoose.Schema({
 
- 
-
 fullName :{
     type : String,
-    required : true
-     
+    required : true   
 },
-
 
 age :{
     type : String,
-    required : true
-     
+    required : true  
 },
 
-
 address:{
-
- 
  type:String,
  required:true
-
 
 },
 

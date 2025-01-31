@@ -1,29 +1,29 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 
-//import css file from style sheets directory
 import styleHome from "../style_sheets/Home.module.css";
 import { Link } from 'react-router-dom';
-//import images from img directory
-import coverImg from "../img/Home.mp4"
+
+import Homefro from "../img/homefro.jpg"
 import Adventure from "../img/Adventure.jpg"
-import Tour_Guide from "../img/Tour Guide.png"
 import Trekking from "../img/Trekking.jpg"
-import CampFire from "../img/CampFire.jpg"
-import OffRoad from "../img/OffRoad.jpg"
 import Camping from "../img/Camping.jpg"
+import Footer from "./Footer";
 
 const Home = () => {
     return (
         <>
         <div className={styleHome.container}>
         <video 
-        src={coverImg} 
+          src="https://media.istockphoto.com/id/1460794434/video/mahout-riding-his-elephant-sigiriya-rock-on-the-background-sri-lanka.mp4?s=mp4-640x640-is&k=20&c=k9MfCKhL1oqfN4rZB7yducGp2kGF2yZvicBzS9ZocYY=" 
         className={styleHome.img} 
         controls 
         autoPlay 
         loop 
         muted
       />
+      <div className={styleHome.layer}>
+    <img src={Homefro} className={`card-img-top ${styleHome.cardImg1}`} alt="..." />
+  </div>
             <div className={styleHome.layer}>
                 <div className={styleHome.centered}>
                     <div className={styleHome.headerTxt}>Explore the Amazing Country <br/>~ Sri Lanka ~</div>
@@ -32,8 +32,9 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <div className={styleHome.layer2}>
         <div className={` ${styleHome.serviceHead}`}>Our Services</div>
-        <div className={`row row-cols-md-4 g-5`} style={{margin: "0px 70px 0px 70px"}}>
+        <div className={`row row-cols-md-3 g-1`} style={{margin: "0px 70px 0px 70px"}}>
             <div className={`col`}>
                 <div className={`card h-100 ${styleHome.cardContainer}`}>
                     <div className={styleHome.imgBg}>
@@ -50,22 +51,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className={`col`}>
-                <div className={`card h-100 ${styleHome.cardContainer}`}>
-                    <div className={styleHome.imgBg}>
-                        <img src={Tour_Guide} className={`card-img-top ${styleHome.cardImg}`} style={{width: "250px"}} alt="..."/>
-                    </div>
-                    <div className={`card-body`} style={{marginLeft: "10px", marginRight: "20px"}}>
-                        <h5 className={`card-title ${styleHome.cardHeader}`}>Tour Guide</h5>
-                        <p className={`card-text ${styleHome.cardDes}`}>Explore effortlessly with our expert tour guides. unlock hidden gems, rich stories, and unforgettable experiences!</p>
-                        <div className={styleHome.readmore}>
-        <Link to="/allservices" className={styleHome.link}>
-          Read More
-        </Link>
-      </div>
-                    </div>
-                </div>
-            </div>
+           
             <div className={`col`}>
                 <div className={`card h-100 ${styleHome.cardContainer}`}>
                     <div className={styleHome.imgBg}>
@@ -84,42 +70,7 @@ const Home = () => {
             </div>
             <div className={`col`}>
                 <div className={`card h-100 ${styleHome.cardContainer}`}>
-                    <div className={styleHome.imgBg}>
-                        <img src={CampFire} className={`card-img-top ${styleHome.cardImg}`} style={{width: "250px"}} alt="..."/>
-                    </div>
-                    <div className={`card-body`} style={{marginLeft: "10px", marginRight: "20px"}}>
-                        <h5 className={`card-title ${styleHome.cardHeader}`}>Camp Fire</h5>
-                        <p className={`card-text ${styleHome.cardDes}`}>Unwind under the stars with cozy campfires and unforgettable moments!</p>
-                        <div className={styleHome.readmore}>
-        <Link to="/allservices" className={styleHome.link}>
-          Read More
-        </Link>
-      </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div className={`row row-cols-md-2 g-2`} style={{margin: "40px 90px 0px 150px"}}>
-       
-            <div className={`col`}>
-                <div className={`card h-100 ${styleHome.cardContainer}`}>
-                    <div className={styleHome.imgBg}>
-                        <img src={OffRoad} className={`card-img-top ${styleHome.cardImg}`} style={{width: "250px"}} alt="..."/>
-                    </div>
-                    <div className={`card-body`} style={{marginLeft: "10px", marginRight: "20px"}}>
-                        <h5 className={`card-title ${styleHome.cardHeader}`}>Off Road</h5>
-                        <p className={`card-text ${styleHome.cardDes}`}>Experience the thrill of the unbeaten path with our off-road adventures!</p>
-                        <div className={styleHome.readmore}>
-        <Link to="/allservices" className={styleHome.link}>
-          Read More
-        </Link>
-      </div>
-                    </div>
-                </div>
-            </div>
-            <div className={`col`}>
-                <div className={`card h-100 ${styleHome.cardContainer}`}>
-                    <div className={styleHome.imgBg}>
+                <div className={styleHome.imgBg}>
                         <img src={Camping} className={`card-img-top ${styleHome.cardImg}`} style={{width: "250px"}} alt="..."/>
                     </div>
                     <div className={`card-body`} style={{marginLeft: "10px", marginRight: "20px"}}>
@@ -133,6 +84,10 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            </div>
+            <div className={`row row-cols-md-2 g-2`} style={{margin: "40px 90px 0px 150px"}}>
+       
+        </div>
         </div>
         <section className={styleHome.reviewSection}>
         <div className="row d-flex justify-content-center">
@@ -231,6 +186,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
+        <Footer/>
         </>
     )
 }

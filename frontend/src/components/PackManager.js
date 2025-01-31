@@ -51,14 +51,14 @@ export default class manager extends Component {
 
         <div class="ManagerCard"  style={{ width: '24rem' }}>
           <div class="card-body1">
-            <h5 class="card-title" class="text-white"><strong>Manage package details</strong></h5>
+            <h5 class="card-title" className="text-white"><strong>Manage package details</strong></h5>
             <Link to="/manage/AllPacks"><button class="ManLetsgoo" type="button"><i className="fa-solid fa-angles-right"></i>Lets go..</button></Link>&nbsp;&nbsp;
           </div>
         </div><br></br>
 
         <div class="ManagerCard"  style={{ width: '24rem' }}>
           <div class="card-body1">
-            <h5 class="card-title" class="text-white"><strong>Customer created packages</strong></h5>
+            <h5 class="card-title" className="text-white"><strong>Customer created packages</strong></h5>
             <Link to="/all2"><button class="ManLetsgoo" type="button"><i className="fa-solid fa-angles-right"></i>Lets go..</button></Link>&nbsp;&nbsp;
           </div>
         </div>
@@ -67,7 +67,7 @@ export default class manager extends Component {
 
         <div class="ManagerCard"  style={{ width: '24rem' }}>
           <div class="card-body1">
-            <h5 class="card-title" class="text-white"><strong>Feedbacks</strong></h5>
+            <h5 class="card-title" className="text-white"><strong>Feedbacks</strong></h5>
       
             <Link to="#"><button class="ManLetsgoo" type="button"><i className="fa-solid fa-angles-right"></i>Lets go..</button></Link>&nbsp;&nbsp;
           </div>

@@ -1,0 +1,43 @@
+.footer {
+    background-color: #1a1a1a;
+    color: #f8f9fa;
+    font-size: 14px;
+  }
+  
+  .footerHeader {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #998ae7;
+  }
+  
+  .footerText {
+    font-size: 14px;
+    color: #d3d3d3;
+    line-height: 1.6;
+  }
+  
+  .footerLink {
+    color:  #f2f1f7;
+    text-decoration: none;
+  }
+  
+  .footerLink:hover {
+    color: #aaa7b1;
+    text-decoration: underline;
+  }
+  
+  .socialLink {
+    color:  #9c97b9;
+    transition: color 0.3s;
+  }
+  
+  .socialLink:hover {
+    color: #f3f2f7;
+  }
+  
+  .footerCopy {
+    font-size: 13px;
+    color: #d3d3d3;
+  }
+  

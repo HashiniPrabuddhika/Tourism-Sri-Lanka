@@ -1,16 +1,16 @@
 const router = require("express").Router();
 let AllServices = require('../models/AllServices');
-const upload = require('../multer/upload'); 
+const upload = require('../multer/upload');
 
 router.get('/', async (req, res) => {
     try {
-        const { title } = req.query; 
-        let query = {}; 
+        const { title } = req.query;
+        let query = {};
 
         if (title) {
-            query.title = title; 
+            query.title = title;
         }
-        const services = await AllServices.find(query); 
+        const services = await AllServices.find(query);
         res.status(200).json(services);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching services', error });
@@ -28,7 +28,7 @@ router.post('/add', upload.single('photo'), async (req, res) => {
             description,
             location,
             price,
-            photos: photoPath, 
+            photos: photoPath,
         });
 
         await newService.save();

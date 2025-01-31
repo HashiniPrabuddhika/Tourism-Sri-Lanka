@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const hotelSchema = new Schema({
     name:{
         type : String,
-        required: true //backend validation
-        
+        required: true //backend validation        
     },
+
     type:{
         type: String,
         required: true
@@ -16,7 +16,11 @@ const hotelSchema = new Schema({
     location:{
         type: String,
         required: true
+    },
 
+    description:{
+        type: String,
+        required: true
     },
 
     // photos:{
@@ -27,12 +31,16 @@ const hotelSchema = new Schema({
     price:{
         type: String,
         required: true
-
     },
+
     no_of_rooms:{
         type: Number,
         required: true
+    },
 
+    image: { 
+        type: String, 
+        required: true
     }
 
 })

@@ -50,30 +50,15 @@ export default class AllHotel extends Component {
                hotels: res.data.existingHotels
 
             });
-
             console.log(this.state.hotels)
-
          }
-
-
       })
-
-
-
    }
 
-
-
-
-
    onDelete(id) {
-
       fetch(`http://localhost:8070/hotel/delete/${id}`, {
 
          method: `DELETE`
-
-
-
 
       }).then((result) => {
 
@@ -84,18 +69,10 @@ export default class AllHotel extends Component {
             this.retriveHotels()
 
          })
-
-
       })
-
-
-
    }
 
-
-
    render() {
-
       return (
 
          <div className={styles.body}>
@@ -231,6 +208,7 @@ export default class AllHotel extends Component {
                                     <th scope="col">Hotel Name</th>
                                     <th scope="col">Type</th>
                                     <th scope="col">Location</th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">No Of Rooms</th>
                                     <th scope="col">Update</th>
@@ -246,6 +224,7 @@ export default class AllHotel extends Component {
                                        <td>{hotels.name}</td>
                                        <td>{hotels.type}</td>
                                        <td>{hotels.location}</td>
+                                       <td>{hotels.description}</td>
                                        <td>{hotels.price}</td>
                                        <td>{hotels.no_of_rooms}</td>
 

@@ -19,6 +19,7 @@ const hotelRouter = require ("./routes/hotels.js");
 const roomRouter = require ("./routes/rooms.js");
 const UserRouter = require("./routes/user-route");
 const tourguideRouter = require("./routes/tourguides.js");
+const tourpackages = require("./routes/tourpackage.js");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -33,7 +34,8 @@ app.use("/payments/history", paymentHistoryRouter);
 app.use("/hotel", hotelRouter);
 app.use("/room", roomRouter);
 app.use("/user", UserRouter);
-app.use("/tourguide",tourguideRouter); 
+app.use("/tourguide",tourguideRouter);
+app.use("/tourpackages", tourpackages); 
 
 const URL = process.env.MONGODB_URL;
 

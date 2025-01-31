@@ -8,7 +8,7 @@ import stylesProfile from "../style_sheets/UserProfile.module.css";
 import Profile from "./Profile";
 
 //import images from img directory
-import illustration from "../img/login-first.png";
+import illustration from "../img/login-first.jpg";
 import underCons from "../img/underCons.svg";
 
 const UserProfile = (props) => {
