@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Tourpackage = require('../models/tourpackage');
+const Tourpackage = require('../models/Tourpackage.js');
 const upload = require('../multer/upload');
 
 router.get('/packages', async (req, res) => {
